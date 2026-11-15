@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;family=Zen+Kaku+Gothic+New:wght@500;700;900&amp;display=swap" rel="stylesheet">
+</helmet>
+<div style="font-family:'Noto Sans JP',sans-serif">
+  <section aria-label="お問い合わせ" style="background:#FDF0E6;padding:clamp(2.4rem,5vw,3.4rem) clamp(1.25rem,5vw,6rem);text-align:center">
+    <p style="margin:0 0 .4rem;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:clamp(1.15rem,1rem + .9vw,1.55rem);line-height:1.5;color:#14342A"><span class="line-chunk" style="display:inline-block">プール・外構・土木の</span><span class="line-chunk" style="display:inline-block">ご相談はお気軽に</span></p>
+    <p style="margin:0 0 1.4rem;font-weight:500;font-size:.98rem;color:#14342A">受付 7:00〜21:00</p>
+    <div style="display:flex;flex-wrap:wrap;gap:14px 18px;justify-content:center;align-items:center">
+      <a href="/form/inquiry" style="display:inline-flex;align-items:center;justify-content:center;min-height:64px;padding:0 34px;background:#B9520E;color:#fff;text-decoration:none;border-radius:999px;box-shadow:0 5px 0 #8A3C08;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:1.05rem">無料相談・お見積り</a>
+      <a href="tel:07022600001" aria-label="電話をかける 070-2260-0001（受付 7:00〜21:00）" style="display:inline-flex;flex-direction:column;align-items:center;justify-content:center;min-height:64px;padding:8px 30px;background:#fff;color:#14342A;border:2px solid #14342A;text-decoration:none;border-radius:999px;font-family:'Zen Kaku Gothic New',sans-serif;line-height:1.25">
+        <span style="font-size:clamp(1.35rem,1.1rem + 1vw,1.75rem);font-weight:900;letter-spacing:.04em;white-space:nowrap">070-2260-0001</span>
+        <span style="font-size:.76rem;font-weight:700">受付 7:00〜21:00</span>
+      </a>
+    </div>
+  </section>
+  <footer style="background:#14342A;color:#fff;padding:clamp(3.4rem,7vw,5rem) clamp(1.25rem,5vw,6rem) clamp(6.5rem,10vw,3rem)">
+    <div style="max-width:1180px;margin:0 auto">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(2rem,5vw,3.6rem)">
+        <div>
+          <a href="/" style="display:inline-flex;background:#fff;border-radius:10px;padding:10px 14px;margin-bottom:1.2rem"><img src="images/logo.png" alt="株式会社一工業" style="height:34px;width:auto;display:block"></a>
+          <p style="margin:0 0 .8rem;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:.88rem;color:#C7E6CF">マジラインプール正規施工販売店</p>
+          <p style="margin:0;font-size:.92rem;line-height:1.9;color:#E6F2EA">本社：千葉県東金市東中703-1<br>資材置き場：千葉県東金市下武射田2235-1</p>
+          <p style="margin:.8rem 0 0;font-size:.92rem;line-height:1.9;color:#E6F2EA">TEL <a href="tel:07022600001" style="color:#fff;font-weight:700;font-size:1.1rem;text-decoration:none">070-2260-0001</a><br>受付 7:00〜21:00</p>
+          <p style="margin:.8rem 0 0;font-size:.86rem;color:#E6F2EA">対応エリア：千葉県・東京都・茨城県</p>
+        </div>
+        <nav aria-label="フッターメニュー" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:0 1.4rem;align-content:start">
+          <sc-for list="{{ links }}" as="it" hint-placeholder-count="14">
+            <a href="{{ it.href }}" style="display:flex;align-items:center;min-height:40px;color:#E6F2EA;text-decoration:none;font-size:.9rem;transition:color .2s" style-hover="color:#9CD1AA">{{ it.label }}</a>
+          </sc-for>
+        </nav>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem 1.5rem;margin-top:clamp(2.4rem,5vw,3.2rem);padding-top:clamp(1.6rem,3vw,2rem);border-top:1px solid rgba(255,255,255,.16)">
+        <p style="margin:0;font-size:.8rem;color:#D2E3D7">© 株式会社一工業 All Rights Reserved.</p>
+        <a href="/sitemap" style="color:#D2E3D7;text-decoration:none;font-size:.8rem;min-height:32px;display:inline-flex;align-items:center" style-hover="color:#fff">サイトマップ</a>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:640}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      links: [
+        { href: '/', label: 'ホーム' },
+        { href: '/construction', label: 'プール工事' },
+        { href: '/exterior', label: '外構・エクステリア工事' },
+        { href: '/civil', label: '土木・駐車場工事' },
+        { href: '/corporate', label: '法人・元請け企業の方へ' },
+        { href: '/work', label: '業務案内' },
+        { href: '/blog-ex/instance', label: '施工実績' },
+        { href: '/price', label: '料金の目安' },
+        { href: '/about', label: '一工業について' },
+        { href: '/information', label: '会社概要' },
+        { href: '/faq', label: 'よくあるご質問' },
+        { href: '/recruit', label: '採用情報' },
+        { href: '/blog', label: 'コラム' },
+        { href: '/form/inquiry', label: 'お問い合わせ' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>
